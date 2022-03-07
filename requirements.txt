@@ -47,9 +47,10 @@ starlette==0.17.1
 toolz==0.11.2
 typing-extensions==4.1.1
 urllib3==1.26.8
-uvicorn==0.17.5
+uvicorn
 varint==1.0.2
 watchgod==0.7
-web3==5.28.0
-websockets==9.1
+web3==6.0.0b1
+websockets==10.2
 yarl==1.7.2
+loguru
