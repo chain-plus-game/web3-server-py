@@ -5,7 +5,7 @@ on:
       - deploy
 env:
   DOCKER_NAME: py_web3_server
-  SRC_PATH: /home/py_web3_server
+  SRC_PATH: /home/deploy/py_web3_server
 
 jobs:
   build:
@@ -25,7 +25,6 @@ jobs:
           ARGS: "-avz --delete"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ env.SRC_PATH }}
 
       - name: restart docker
         uses: appleboy/ssh-action@master
