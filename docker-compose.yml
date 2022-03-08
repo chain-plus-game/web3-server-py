@@ -1,7 +1,9 @@
 # yaml 配置实例
 version: '3'
 services:
-  web:
+  py_web3_server:
+    hostname: py_web3_server
     build: .
     volumes:
     - ./app:/app
+    - ./log:/app/logs
