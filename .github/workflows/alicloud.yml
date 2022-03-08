@@ -5,7 +5,7 @@ on:
       - main
 env:
   DOCKER_NAME: py_web3_server
-  SRC_PATH: /home/py_web3_server
+  SRC_PATH: /home/deploy/py_web3_server
 
 jobs:
   build:
@@ -33,6 +33,7 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: ${{ env.SRC_PATH }}
+          EXCLUDE: "/.git/"
           
       - name: restart docker
         uses: appleboy/ssh-action@master
