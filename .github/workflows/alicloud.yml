@@ -5,7 +5,7 @@ on:
       - deploy
 env:
   DOCKER_NAME: py_web3_server
-  SRC_PATH: /home/py_web3_server
+  SRC_PATH: /home/deploy/py_web3_server
 
 jobs:
   build:
@@ -13,12 +13,10 @@ jobs:
     steps:
       # 切换分支
       - name: Checkout
-        uses: actions/checkout@deploy
-      # 下载 git submodule
-      - uses: srt32/git-actions@v0.0.3
+        uses: actions/checkout@v3
         with:
-          args: git submodule update --init --recursive
-
+          ref: deploy
+        
       # Deploy
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.2.11
@@ -27,7 +25,6 @@ jobs:
           ARGS: "-avz --delete"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: ${{ env.SRC_PATH }}
 
       - name: restart docker
         uses: appleboy/ssh-action@master
