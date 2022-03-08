@@ -1,0 +1,7 @@
+# yaml 配置实例
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+    - ./app:/app
