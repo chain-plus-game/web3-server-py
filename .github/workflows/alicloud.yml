@@ -35,10 +35,3 @@ jobs:
           TARGET: ${{ env.SRC_PATH }}
           EXCLUDE: "/.git/"
           
-      - name: restart docker
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.ACCESS_TOKEN }}
-          script: docker restart ${{ env.DOCKER_NAME }}
