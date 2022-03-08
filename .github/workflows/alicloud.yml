@@ -2,7 +2,7 @@ name: deploy to ecs
 on:
   push:
     branches:
-      - deploy
+      - main
 env:
   DOCKER_NAME: py_web3_server
   SRC_PATH: /home/deploy/py_web3_server
@@ -14,8 +14,6 @@ jobs:
       # 切换分支
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          ref: deploy
         
       # Deploy
       - name: Deploy
