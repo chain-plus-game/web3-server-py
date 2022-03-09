@@ -1,8 +1,6 @@
 from fastapi import FastAPI, WebSocket
 from loguru import logger
 from app.ws_client import ws_client
-from app.types import ContractCall
-from app import abi_temp, address_temp
 import uuid
 import os
 from logging.config import dictConfig

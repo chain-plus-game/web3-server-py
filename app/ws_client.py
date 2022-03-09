@@ -2,12 +2,7 @@
 import json
 import aiohttp
 from loguru import logger
-from typing import List
 from web3 import Web3
-from web3.eth import AsyncEth
-from web3.net import AsyncNet
-
-
 class WsClient:
 
     def __init__(self):
