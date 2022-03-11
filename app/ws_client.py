@@ -17,8 +17,9 @@ class WsClient:
 
     async def receive(self, client_id, data):
         func = self.func_map[data['func']]
+        msg_data = json.loads(data['data'])
         if func:
-            res, msg = await func(client_id, **data['data'])
+            res, msg = await func(client_id, **msg_data)
             socket = self.get_socket(client_id)
             if isinstance(res, (dict, list)):
                 res = json.dumps(res)
