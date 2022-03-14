@@ -1,10 +1,9 @@
-import route
 import os
 from logging.config import dictConfig
 import sys
 from config import log_config
 from loguru import logger
-from fastapi import FastAPI, WebSocket
+from fastapi import FastAPI
 
 
 dictConfig(log_config)
