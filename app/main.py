@@ -18,3 +18,10 @@ logger.add(path_log, rotation='0:00', enqueue=True,
 logger.info("======= server start ======")
 
 app = FastAPI()
+
+
+def init_app():
+    import route
+
+
+init_app()
