@@ -4,6 +4,11 @@ from ws_client import ws_client
 import uuid
 from main import app
 
+
+@app.get('/hello')
+async def hello():
+    return 'hello'
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket, uri: str):
     await websocket.accept()
