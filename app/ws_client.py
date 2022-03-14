@@ -3,6 +3,8 @@ import json
 import aiohttp
 from loguru import logger
 from web3 import Web3
+
+
 class WsClient:
 
     def __init__(self):
@@ -90,7 +92,7 @@ async def init_contract(client_id, address, abi_url):
     w3 = ws_client.get_w3(client_id)
     contract = w3.eth.contract(address=address, abi=abi)
     await ws_client.init_contract(address, contract)
-    return {}, 'success'
+    return {'address': address}, 'success'
 
 
 @ws_client.register
